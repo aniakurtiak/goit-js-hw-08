@@ -8,7 +8,7 @@ const iframe = document.querySelector('iframe');
 function onPlay({ seconds }) {
      localStorage.setItem("videoplayer-current-time", JSON.stringify({seconds}))
 }
-const LS = localStorage.getItem("videoplayer-current-time", );
+const LS = localStorage.getItem("videoplayer-current-time");
 player.setCurrentTime(LS).then(function(seconds) {
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
