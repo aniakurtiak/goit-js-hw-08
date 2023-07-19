@@ -4,9 +4,12 @@ const form = document.querySelector('.feedback-form');
 form.addEventListener('input', handlerInput);
 form.addEventListener('submit', handlerSubmit);
 
-const data = {};
+let data = {};
 function handlerInput(evt) {
-  data[evt.target.name] = evt.target.value;
+  data = {
+    email: form.elements.email.value,
+      message: form.elements.message.value,
+  }
   saveFormStateThrottled();
 }
 
