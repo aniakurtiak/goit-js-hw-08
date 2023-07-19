@@ -23,29 +23,10 @@ const formText = form.querySelector('textarea[name="message"]');
 
 function fillForm() {
 
-  //   if (LS) {
-  // (formInput.value = LS.email) &&( formText.value = LS.message);
-  //   }
-  // }
-  
-//   if (LS.email) {
-//     formInput.value = LS.email;
-//   } else {
-//     formInput.value = ''
-//   }
-  
-//   if (LS.message) {
-//     formText.value = LS.message;
-//   } else {
-//     formText.value = ''
-//   }
-// }
-  
-  if ((LS.email) || (LS.message)) {
-    (formInput.value = LS.email) &&
-      (formText.value = LS.message);
+    if (LS) {
+  (formInput.value = LS.email) &&( formText.value = LS.message);
+    }
   }
-}
 
 fillForm();
 
