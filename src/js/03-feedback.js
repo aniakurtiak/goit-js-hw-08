@@ -14,7 +14,7 @@ function saveFormState() {
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
 };
 
-const LS = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
+const LS = JSON.parse(localStorage.getItem('feedback-form-state'));
 
 const formInput = form.querySelector('input[name="email"]');
 const formText = form.querySelector('textarea[name="message"]');
