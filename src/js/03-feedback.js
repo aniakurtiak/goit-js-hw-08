@@ -21,14 +21,28 @@ const LS = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 const formInput = form.querySelector('input[name="email"]');
 const formText = form.querySelector('textarea[name="message"]');
 
-// function fillForm() {
-//   if (LS) {
-// (formInput.value = LS.email) &&( formText.value = LS.message);
-//   }
-// }
-// fillForm();
-LS ? formInput.value = LS.email : formInput.value = '';
-LS ? formText.value = LS.message : formText.value = '';
+function fillForm() {
+
+  //   if (LS) {
+  // (formInput.value = LS.email) &&( formText.value = LS.message);
+  //   }
+  // }
+  
+  if (LS.email) {
+    formInput.value = LS.email;
+  } else {
+    formInput.value = ''
+  }
+  
+  if (LS.message) {
+    formText.value = LS.email;
+  } else {
+    formText.message = ''
+  }
+}
+
+fillForm();
+
 
 function handlerSubmit(evt) {
   evt.preventDefault();
