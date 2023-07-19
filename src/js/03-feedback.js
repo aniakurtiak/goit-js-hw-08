@@ -37,7 +37,7 @@ function fillForm() {
   if (LS.message) {
     formText.value = LS.message;
   } else {
-    formText.message = ''
+    formText.value = ''
   }
 }
 
