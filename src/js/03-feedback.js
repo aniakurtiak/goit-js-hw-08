@@ -7,12 +7,14 @@ form.addEventListener('submit', handlerSubmit);
 const data = {};
 function handlerInput(evt) {
   data[evt.target.name] = evt.target.value;
-    saveFormState();
+    saveFormStateThrottled();
     }
 
 function saveFormState() {
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
 };
+const saveFormStateThrottled = throttle(saveFormState, 500);
+
 
 const LS = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 
