@@ -35,7 +35,7 @@ function fillForm() {
   }
   
   if (LS.message) {
-    formText.value = LS.email;
+    formText.value = LS.message;
   } else {
     formText.message = ''
   }
