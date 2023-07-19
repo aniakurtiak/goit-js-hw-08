@@ -28,18 +28,26 @@ function fillForm() {
   //   }
   // }
   
+//   if (LS.email) {
+//     formInput.value = LS.email;
+//   } else {
+//     formInput.value = ''
+//   }
+  
+//   if (LS.message) {
+//     formText.value = LS.message;
+//   } else {
+//     formText.value = ''
+//   }
+// }
+  
   if (LS.email) {
     formInput.value = LS.email;
-  } else {
-    formInput.value = ''
-  }
-  
-  if (LS.message) {
+  } else if (LS.message) {
     formText.value = LS.message;
-  } else {
-    formText.value = ''
   }
 }
+  
 
 fillForm();
 
