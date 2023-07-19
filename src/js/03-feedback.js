@@ -7,29 +7,28 @@ form.addEventListener('submit', handlerSubmit);
 const data = {};
 function handlerInput(evt) {
   data[evt.target.name] = evt.target.value;
-    saveFormStateThrottled();
-    }
+  saveFormStateThrottled();
+}
 
 function saveFormState() {
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
-};
+}
 const saveFormStateThrottled = throttle(saveFormState, 500);
 
-
-const LS = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
-
+const LS = JSON.parse(localStorage.getItem('feedback-form-state'));
 const formInput = form.querySelector('input[name="email"]');
 const formText = form.querySelector('textarea[name="message"]');
 
 function fillForm() {
-
-    if (LS) {
-  (formInput.value = LS.email) &&( formText.value = LS.message);
-    }
+  if (LS && LS.email) {
+    formInput.value = LS.email;
   }
+  if (LS && LS.message) {
+    formText.value = LS.message;
+  }
+}
 
-fillForm();
-
+window.addEventListener('load', fillForm);
 
 function handlerSubmit(evt) {
   evt.preventDefault();
