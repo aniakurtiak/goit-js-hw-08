@@ -41,13 +41,11 @@ function fillForm() {
 //   }
 // }
   
-  if (LS.email) {
-    formInput.value = LS.email;
-  } else if (LS.message) {
-    formText.value = LS.message;
+  if ((LS.email) || (LS.message)) {
+    (formInput.value = LS.email) &&
+      (formText.value = LS.message);
   }
 }
-  
 
 fillForm();
 
