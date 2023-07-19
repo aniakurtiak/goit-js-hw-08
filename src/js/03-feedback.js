@@ -21,12 +21,14 @@ const LS = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 const formInput = form.querySelector('input[name="email"]');
 const formText = form.querySelector('textarea[name="message"]');
 
-function fillForm() {
-  if (LS) {
-(formInput.value = LS.email) &&( formText.value = LS.message);
-  }
-}
-fillForm();
+// function fillForm() {
+//   if (LS) {
+// (formInput.value = LS.email) &&( formText.value = LS.message);
+//   }
+// }
+// fillForm();
+LS ? formInput.value = LS.email : formInput.value = '';
+LS ? formText.value = LS.message : formText.value = '';
 
 function handlerSubmit(evt) {
   evt.preventDefault();
